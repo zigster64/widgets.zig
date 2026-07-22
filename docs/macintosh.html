@@ -3,102 +3,82 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://unpkg.com/@sakofchit/system.css@2.1.1/dist/system.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@sakun/system.css@2.1.1/dist/system.min.css">
 <title>Macintosh System 6</title>
-<style>
-  body { background: repeating-conic-gradient(#808080 0% 25%,#c0c0c0 0% 50%) 50%/4px 4px; margin:0; padding:0; min-height:100vh; }
-  .desktop { position:relative; width:100%; height:100vh; }
-  .app-window { position:absolute; width:340px; }
-  .app-window .window-pane { max-height:250px; overflow-y:auto; }
-  .app-window .window-pane p { margin:4px 0; }
-  .app-window .window-pane a { display:block; padding:1px 0; }
-  .app-window .window-pane a:hover { background:#000; color:#fff; }
-</style>
 </head>
-<body>
+<body style="background:#c0c0c0; margin:0; padding:0;">
 <nav class="menu-bar"><ul class="menu-bar-items">
 <li class="apple-menu"><span>🍎</span></li>
 <li>File</li><li>Edit</li><li>View</li><li>Special</li>
 </ul></nav>
-<div class="window app-window" style="top:36px;left:24px;"><div class="title-bar"><span class="title">Widgets Demos</span></div><div class="separator"></div><div class="window-pane"><a href="/">📁 index</a>
-<a href="pico.html">📁 PicoCSS</a>
-<a href="jelly.html">📁 JellyUI</a>
-<a href="daisy.html">📁 DaisyUI</a>
-<a href="nes.html">📁 NES</a>
-<a href="win98.html">📁 Win98</a>
-<a href="orbit.html">📁 Orbit</a>
-<a href="snes.html">📁 Snes</a>
-<a href="tui.html">📁 TUI</a>
-<a href="macintosh.html">📁 System 6</a>
+<div style="display:flex; gap:12px; padding:16px; flex-wrap:wrap">
+<a href="pico.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ PicoCSS</div><div style="font-size:11px;word-wrap:break-word">🖥️ PicoCSS</div></a>
+<a href="jelly.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ JellyUI</div><div style="font-size:11px;word-wrap:break-word">🖥️ JellyUI</div></a>
+<a href="daisy.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ DaisyUI</div><div style="font-size:11px;word-wrap:break-word">🖥️ DaisyUI</div></a>
+<a href="nes.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ NES</div><div style="font-size:11px;word-wrap:break-word">🖥️ NES</div></a>
+<a href="win98.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ Win98</div><div style="font-size:11px;word-wrap:break-word">🖥️ Win98</div></a>
+<a href="orbit.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ Orbit</div><div style="font-size:11px;word-wrap:break-word">🖥️ Orbit</div></a>
+<a href="snes.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ Snes</div><div style="font-size:11px;word-wrap:break-word">🖥️ Snes</div></a>
+<a href="tui.html" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🖥️ TUI</div><div style="font-size:11px;word-wrap:break-word">🖥️ TUI</div></a>
+<a href="#" style="text-align:center;width:72px;text-decoration:none;color:#000"><div style="font-size:32px">🗑️ Trash</div><div style="font-size:11px;word-wrap:break-word">🗑️ Trash</div></a>
+</div>
+<div class="window"><div class="title-bar"><button class="close"></button><h1 class="title">Widgets.zig</h1><button class="resize"></button></div><div class="separator"></div><div class="window-pane"><p>Abstract Widget Toolkit — generates HTML for 11 CSS frameworks from a single API.</p>
+<fieldset><legend>Frameworks</legend>
+<label class="checkbox"><input type="checkbox">
+PicoCSS</label>
+<label class="checkbox"><input type="checkbox">
+DaisyUI</label>
+<label class="checkbox"><input type="checkbox">
+JellyUI</label>
+<label class="checkbox"><input type="checkbox">
+SNES.css</label>
+<label class="checkbox"><input type="checkbox">
+NES.css</label>
+<label class="checkbox"><input type="checkbox">
+98.css</label>
+<label class="checkbox"><input type="checkbox">
+System.css</label>
+<label class="checkbox"><input type="checkbox">
+Orbit</label>
+<label class="checkbox"><input type="checkbox">
+TuiCss</label>
+</fieldset>
 </div></div>
-<div class="window app-window" style="top:36px;right:24px;"><div class="title-bar"><span class="title">Control Panel</span></div><div class="separator"></div><div class="window-pane"><fieldset><legend>Display</legend>
-<label class="radio"><input type="radio" name="depth">
-Black &amp; White</label>
-<label class="radio"><input type="radio" name="depth">
-16 Colors</label>
-<label class="radio"><input type="radio" name="depth">
-256 Colors</label>
-<label class="radio"><input type="radio" name="depth">
-Millions</label>
+<div class="window"><div class="title-bar"><button class="close"></button><h1 class="title">Control Panel</h1><button class="resize"></button></div><div class="separator"></div><div class="window-pane"><fieldset><legend>Desktop Pattern</legend>
+<label class="radio"><input type="radio" name="pattern">
+8-color</label>
+<label class="radio"><input type="radio" name="pattern">
+Gray</label>
 </fieldset>
 <fieldset><legend>Mouse</legend>
+<label class="radio"><input type="radio" name="speed">
+Very Slow</label>
 <label class="radio"><input type="radio" name="speed">
 Slow</label>
 <label class="radio"><input type="radio" name="speed">
 Fast</label>
 <label class="checkbox"><input type="checkbox">
-Double-click to open</label>
+Double-Click Speed</label>
 </fieldset>
 </div></div>
-<div class="window app-window" style="top:290px;left:24px;"><div class="title-bar"><span class="title">Notepad</span></div><div class="separator"></div><div class="window-pane"><p>Widgets.zig — Abstract Widget Toolkit</p>
-<p>━━━━━━━━━━━━━━━━━━━━</p>
-<p>Supports 11 CSS frameworks from a single Zig widget API:</p>
-<p>• PicoCSS — Semantic classes</p>
-<p>• DaisyUI — Tailwind components</p>
-<p>• JellyUI — Web Components</p>
-<p>• SNES/NES — Retro gaming</p>
-<p>• 98.css / System 6 — Classic OS</p>
-<p>• Orbit — Radial dashboards</p>
-<p>• TuiCss — Terminal UI</p>
+<div class="window"><div class="title-bar"><button class="close"></button><h1 class="title">Notepad</h1><button class="resize"></button></div><div class="separator"></div><div class="window-pane"><p>Supports 11 CSS frameworks:</p>
+<p>PicoCSS — Semantic</p>
+<p>DaisyUI — Tailwind</p>
+<p>JellyUI — Web Components</p>
+<p>SNES.css — 16-bit</p>
+<p>NES.css — 8-bit</p>
+<p>98.css — Windows</p>
+<p>System.css — Macintosh</p>
+<p>Orbit — Radial</p>
+<p>TuiCss — Terminal</p>
 </div></div>
-<div class="window app-window" style="top:290px;right:24px;width:240px;"><div class="title-bar"><span class="title">Calculator</span></div><div class="separator"></div><div class="window-pane"><p class="field-row"></p>
-<div class="field-row"><input type="text" value="0" style="text-align:right;font-size:18px;width:180px;"></div>
-<div class="field-row"><button class="btn">C</button>
-<button class="btn">±</button>
-<button class="btn">%</button>
-<button class="btn">÷</button>
-</div>
-<div class="field-row"><button class="btn">7</button>
-<button class="btn">8</button>
-<button class="btn">9</button>
-<button class="btn">×</button>
-</div>
-<div class="field-row"><button class="btn">4</button>
-<button class="btn">5</button>
-<button class="btn">6</button>
-<button class="btn">−</button>
-</div>
-<div class="field-row"><button class="btn">1</button>
-<button class="btn">2</button>
-<button class="btn">3</button>
-<button class="btn">+</button>
-</div>
-<div class="field-row"><button class="btn">0</button>
-<button class="btn">.</button>
-<button class="btn">=</button>
-</div>
-</div></div>
-<div class="window app-window" style="bottom:24px;right:24px;width:280px;"><div class="title-bar"><span class="title">Installer</span></div><div class="separator"></div><div class="window-pane"><p>Installing Widgets.zig v0.1.0</p>
+<div class="window"><div class="title-bar"><button class="close"></button><h1 class="title">Installer</h1><button class="resize"></button></div><div class="separator"></div><div class="window-pane"><p>Installing Widgets.zig v0.1.0</p>
 <progress value="65" max="100"></progress>
-<p>65% complete — 17 of 26 files</p>
-<p>Currently: src/root.zig</p>
+<p>Items remaining to be installed: 17</p>
+<p>Installing: src/root.zig...</p>
 <button class="btn">Stop</button>
+<button class="btn">Pause</button>
 </div></div>
-<div class="window app-window" style="bottom:24px;left:24px;width:200px;"><div class="title-bar"><span class="title">Trash</span></div><div class="separator"></div><div class="window-pane"><p>🗑️ Empty Trash</p>
-<p>3 items</p>
-<button class="btn">Empty</button>
-</div></div>
-<div class="standard-dialog center"><p class="dialog-text">Are you sure you want to shut down your computer now?</p>
-</div>
+<div class="standard-dialog center"><p class="dialog-text">Are you sure you want to shut down your computer now?</p><div class="dialog-actions"><button class="btn">Restart</button><button class="btn">Cancel</button><button class="btn">Shut Down</button></div></div>
 </body>
 </html>
