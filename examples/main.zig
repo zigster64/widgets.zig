@@ -10,6 +10,7 @@ const nes = @import("nes.zig");
 const win98 = @import("win98.zig");
 const system = @import("system.zig");
 const orbit = @import("orbit.zig");
+const tui = @import("tui.zig");
 
 pub fn main(init: std.process.Init) !void {
     const io = init.io;
@@ -23,4 +24,5 @@ pub fn main(init: std.process.Init) !void {
     try win98.win98Page(io);
     try system.systemPage(io);
     try orbit.orbitPage(io);
+    try tui.tuiPage(io);
 }

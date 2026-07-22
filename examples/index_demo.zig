@@ -17,6 +17,10 @@ pub fn indexHtml(io: Io) !void {
         \\<a href="jelly.html">Jelly</a>
         \\<a href="snes.html">Snes</a>
         \\<a href="daisy.html">Daisy</a>
+        \\<a href="nes.html">NES</a>
+        \\<a href="win98.html">Win98</a>
+        \\<a href="system.html">System</a>
+        \\<a href="orbit.html">Orbit</a>
         \\</nav>
         \\</header>
         \\<main><section class="content"><p>Welcome to the <span class="highlight">widgets</span>
@@ -108,6 +112,26 @@ pub fn indexGen(io: Io) !void {
                         const a = try h.el("a", .{ .href = "daisy.html" });
                         defer a.close();
                         try h.text("Daisy");
+                    }
+                    {
+                        const a = try h.el("a", .{ .href = "nes.html" });
+                        defer a.close();
+                        try h.text("NES");
+                    }
+                    {
+                        const a = try h.el("a", .{ .href = "win98.html" });
+                        defer a.close();
+                        try h.text("Win98");
+                    }
+                    {
+                        const a = try h.el("a", .{ .href = "system.html" });
+                        defer a.close();
+                        try h.text("System");
+                    }
+                    {
+                        const a = try h.el("a", .{ .href = "orbit.html" });
+                        defer a.close();
+                        try h.text("Orbit");
                     }
                 }
             }

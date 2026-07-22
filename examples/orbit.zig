@@ -29,13 +29,15 @@ pub fn orbitPage(io: Io) !void {
 
     const h = Or.OrbitCSS(w);
 
-    // Nav (plain HTML since orbit is radial)
+    // Nav
     {
         const nav = try h.html.el("nav", .{});
         defer nav.close();
         for ([_][2][]const u8{
             .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Daisy", "daisy.html" },
-            .{ "NES", "nes.html" }, .{ "Win98", "win98.html" }, .{ "Orbit", "orbit.html" },
+            .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" },
+            .{ "NES", "nes.html" }, .{ "Win98", "win98.html" },
+            .{ "System", "system.html" }, .{ "Orbit", "orbit.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });
             defer a.close();
@@ -43,31 +45,115 @@ pub fn orbitPage(io: Io) !void {
         }
     }
 
-    // ── Gauges ──
+    // ── Dashboard row ──
     {
-        const bb = try h.bigbang("theme-cyan");
-        defer bb.close();
-        const gs = try h.gravitySpot();
-        defer gs.close();
+        const row = try h.html.el("div", .{ .class = "display:flex;gap:24px" });
+        defer row.close();
 
+        // Gauge 1: Progress ring
         {
-            const o = try h.orbit(1, 270);
-            defer o.close();
-            const p = try h.progress(72);
-            defer p.close();
+            const bb = try h.bigbang("theme-cyan");
+            defer bb.close();
+            const gs = try h.gravitySpot();
+            defer gs.close();
+            {
+                const o = try h.orbit(2, 270);
+                defer o.close();
+                const p = try h.progress(72);
+                defer p.close();
+            }
+            {
+                const o = try h.orbit(3, 270);
+                defer o.close();
+                const p = try h.progress(45);
+                defer p.close();
+            }
+            {
+                const s = try h.satellite();
+                defer s.close();
+                const cp = try h.capsule();
+                defer cp.close();
+                try h.html.text("CPU");
+            }
         }
+
+        // Gauge 2: Full circle
         {
-            const o = try h.orbit(2, 270);
-            defer o.close();
-            const p = try h.progress(45);
-            defer p.close();
+            const bb = try h.bigbang("theme-cyan");
+            defer bb.close();
+            const gs = try h.gravitySpot();
+            defer gs.close();
+            {
+                const o = try h.orbit(1, 360);
+                defer o.close();
+                const p = try h.progress(88);
+                defer p.close();
+            }
+            {
+                const o = try h.orbit(2, 360);
+                defer o.close();
+                const p = try h.progress(60);
+                defer p.close();
+            }
+            {
+                const s = try h.satellite();
+                defer s.close();
+                const cp = try h.capsule();
+                defer cp.close();
+                try h.html.text("RAM");
+            }
         }
+
+        // Gauge 3: Arc with arrow shape
         {
-            const s = try h.satellite();
-            defer s.close();
-            const cp = try h.capsule();
-            defer cp.close();
-            try h.html.text("Orbit CSS");
+            const bb = try h.bigbang("theme-cyan");
+            defer bb.close();
+            const gs = try h.gravitySpot();
+            defer gs.close();
+            {
+                const o = try h.orbit(3, 180);
+                defer o.close();
+                const a = try h.arc(55, "arrow");
+                defer a.close();
+            }
+            {
+                const s = try h.satellite();
+                defer s.close();
+                const cp = try h.capsule();
+                defer cp.close();
+                try h.html.text("Speed");
+            }
+        }
+    }
+
+    // ── Large single gauge ──
+    {
+        const section = try h.html.el("div", .{ .class = "margin-top:24px;display:flex;justify-content:center" });
+        defer section.close();
+        {
+            const bb = try h.bigbang("theme-cyan");
+            defer bb.close();
+            const gs = try h.gravitySpot();
+            defer gs.close();
+            {
+                const o = try h.orbit(4, 270);
+                defer o.close();
+                const p = try h.progress(82);
+                defer p.close();
+            }
+            {
+                const o = try h.orbit(5, 270);
+                defer o.close();
+                const a = try h.arc(35, null);
+                defer a.close();
+            }
+            {
+                const s = try h.satellite();
+                defer s.close();
+                const cp = try h.capsule();
+                defer cp.close();
+                try h.html.text("Orbit CSS");
+            }
         }
     }
 

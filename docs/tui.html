@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tuicss@2.3.2/dist/tuicss.min.css">
+<title>TuiCss Demo</title>
+</head>
+<body style="background:#000;padding:16px;max-width:900px;margin:0 auto">
+<div class="tui-panel"><div class="tui-panel-header">Widgets Demos</div>
+<div class="tui-panel-content"></div>
+<a href="/"><button class="tui-button cyan-168">Home</button>
+</a>
+<a href="pico.html"><button class="tui-button cyan-168">Pico</button>
+</a>
+<a href="jelly.html"><button class="tui-button cyan-168">Jelly</button>
+</a>
+<a href="daisy.html"><button class="tui-button cyan-168">Daisy</button>
+</a>
+<a href="nes.html"><button class="tui-button cyan-168">NES</button>
+</a>
+<a href="win98.html"><button class="tui-button cyan-168">Win98</button>
+</a>
+<a href="system.html"><button class="tui-button cyan-168">System</button>
+</a>
+<a href="orbit.html"><button class="tui-button cyan-168">Orbit</button>
+</a>
+<a href="tui.html"><button class="tui-button cyan-168">TUI</button>
+</a>
+</div>
+<div class="tui-panel"><div class="tui-panel-header">Buttons</div>
+<div class="tui-panel-content"></div>
+<button class="tui-button cyan-168">cyan</button>
+<button class="tui-button green-168">green</button>
+<button class="tui-button yellow-168">yellow</button>
+<button class="tui-button red-168">red</button>
+<button class="tui-button white-168">white</button>
+<button class="tui-button blue-168">blue</button>
+<button class="tui-button magenta-168">magenta</button>
+</div>
+<div class="tui-panel"><div class="tui-panel-header">Form</div>
+<div class="tui-panel-content"></div>
+<label class="tui-textbox-label">Username:</label>
+<input class="tui-textbox" type="text">
+<label class="tui-textbox-label">Password:</label>
+<input class="tui-textbox" type="text">
+<fieldset class="tui-fieldset"><legend class="tui-fieldset-legend">Options</legend>
+<label class="tui-checkbox"><input type="checkbox">
+Remember me</label>
+</label>
+<label class="tui-checkbox"><input type="checkbox">
+Dark mode</label>
+</label>
+<label class="tui-radio"><input type="radio" name="mode">
+Tabs</label>
+</label>
+<label class="tui-radio"><input type="radio" name="mode">
+Spaces</label>
+</label>
+</fieldset>
+<button class="tui-button green-168">Submit</button>
+<button class="tui-button red-168">Cancel</button>
+</div>
+<div class="tui-panel"><div class="tui-panel-header">Progress</div>
+<div class="tui-panel-content"></div>
+<progress class="tui-progress" value="75" max="100"></progress>
+<progress class="tui-progress" value="45" max="100"></progress>
+</div>
+<div class="tui-panel"><div class="tui-panel-header">Processes</div>
+<div class="tui-panel-content"></div>
+<table class="tui-table"><thead><tr><th>PID</th>
+<th>Name</th>
+<th>CPU</th>
+<th>MEM</th>
+</tr>
+<tbody><tr><td>1234</td>
+<td>zig build</td>
+<td>42%</td>
+<td>128M</td>
+</tr>
+<tr><td>5678</td>
+<td>widgets.zig</td>
+<td>15%</td>
+<td>64M</td>
+</tr>
+<tr><td>9012</td>
+<td>pico.css</td>
+<td>3%</td>
+<td>32M</td>
+</tr>
+</tbody>
+</thead>
+</table>
+</div>
+<div class="tui-statusbar"><span class="tui-statusbar-text">Widgets.zig v0.0.0</span>
+<span class="tui-statusbar-text">10 frameworks</span>
+<span class="tui-statusbar-text">1 file</span>
+</div>
+</body>
+</html>

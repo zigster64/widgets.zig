@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/@sakofchit/system.css@2.1.1/dist/system.min.css">
+<title>System 6 Desktop</title>
+<style>
+  body { background: repeating-conic-gradient(#808080 0% 25%, #c0c0c0 0% 50%) 50% / 4px 4px; margin:0; padding:0; min-height:100vh; }
+  .win { position:absolute; width:360px; }
+</style>
+</head>
+<body>
+<nav class="menu-bar"><ul class="menu-bar-items">
+<li class="apple-menu"><span>🍎</span></li>
+<li>File</li><li>Edit</li><li>View</li><li>Special</li>
+</ul></nav>
+<div class="window win" style="top:40px;left:40px;"><div class="title-bar"><span class="title">Widgets Demos</span></div><div class="separator"></div><div class="window-pane"><a href="/">📄 index</a>
+<a href="pico.html">📄 PicoCSS</a>
+<a href="jelly.html">📄 JellyUI</a>
+<a href="daisy.html">📄 DaisyUI</a>
+<a href="nes.html">📄 NES</a>
+<a href="win98.html">📄 Win98</a>
+<a href="orbit.html">📄 Orbit</a>
+<a href="snes.html">📄 Snes</a>
+</div></div>
+<div class="window win" style="top:40px;right:40px;"><div class="title-bar"><span class="title">Control Panel</span></div><div class="separator"></div><div class="window-pane"><fieldset><legend>Display</legend>
+<label class="radio"><input type="radio" name="depth">
+Black & White</label>
+<label class="radio"><input type="radio" name="depth">
+256 Colors</label>
+<label class="radio"><input type="radio" name="depth">
+Thousands</label>
+</fieldset>
+<fieldset><legend>Sound</legend>
+<label class="checkbox"><input type="checkbox">
+Alert sounds</label>
+<input type="range">
+</fieldset>
+</div></div>
+<div class="window win" style="top:280px;left:100px;"><div class="title-bar"><span class="title">Notepad</span></div><div class="separator"></div><div class="window-pane"><p>Widgets.zig generates HTML for multiple CSS frameworks from one API.</p>
+</div></div>
+<div class="window win" style="bottom:40px;right:100px;"><div class="title-bar"><span class="title">Installer</span></div><div class="separator"></div><div class="window-pane"><p>Copying files...</p>
+<progress value="65" max="100"></progress>
+<p>65% — 42 files remaining</p>
+<button class="btn">Stop</button>
+</div></div>
+<div class="window win" style="bottom:40px;left:40px;width:200px;"><div class="title-bar"><span class="title">Trash</span></div><div class="separator"></div><div class="window-pane"><p>🗑️ 3 items</p>
+</div></div>
+<div class="standard-dialog center"><p class="dialog-text">Are you sure you want to shut down your computer now?</p>
+</div>
+</body>
+</html>

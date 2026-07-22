@@ -39,6 +39,8 @@ pub fn win98Page(io: Io) !void {
             .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
             .{ "Win98", "win98.html" },
+            .{ "System", "system.html" },
+            .{ "Orbit", "orbit.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });
             defer a.close();
