@@ -34,8 +34,11 @@ pub fn tuiPage(io: Io) !void {
         defer p.close();
         for ([_][2][]const u8{
             .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Jelly", "jelly.html" },
-            .{ "Daisy", "daisy.html" }, .{ "NES", "nes.html" },
+            .{ "Daisy", "daisy.html" },
+            .{ "Snes", "snes.html" }, .{ "NES", "nes.html" },
             .{ "Atari", "atari.html" },
+            .{ "Handdrawn", "handdrawn.html" },
+            .{ "Doodle", "doodle.html" },
             .{ "Win98", "win98.html" }, .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" }, .{ "TUI", "tui.html" },
         }) |link| {

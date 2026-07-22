@@ -43,7 +43,9 @@ pub fn orbitPage(io: Io) !void {
         .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Daisy", "daisy.html" },
         .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" },
         .{ "NES", "nes.html" },
-            .{ "Atari", "atari.html" }, .{ "Win98", "win98.html" },
+            .{ "Atari", "atari.html" },
+            .{ "Handdrawn", "handdrawn.html" },
+            .{ "Doodle", "doodle.html" }, .{ "Win98", "win98.html" },
         .{ "Macintosh", "macintosh.html" }, .{ "Orbit", "orbit.html" },
     }) |link| {
         try w.print("<a href=\"{s}\">{s}</a>", .{ link[1], link[0] });

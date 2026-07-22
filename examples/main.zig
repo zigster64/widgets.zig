@@ -12,6 +12,7 @@ const system = @import("system.zig");
 const orbit = @import("orbit.zig");
 const tui = @import("tui.zig");
 const atari = @import("atari.zig");
+const handdrawn = @import("handdrawn.zig");
 
 pub fn main(init: std.process.Init) !void {
     const io = init.io;
@@ -27,4 +28,6 @@ pub fn main(init: std.process.Init) !void {
     try orbit.orbitPage(io);
     try tui.tuiPage(io);
     try atari.atariPage(io);
+    try handdrawn.handdrawnPage(io);
+    try doodle.doodlePage(io);
 }

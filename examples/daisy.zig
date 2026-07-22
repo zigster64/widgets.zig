@@ -52,6 +52,8 @@ pub fn daisyPage(io: Io) !void {
                 .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
             .{ "Atari", "atari.html" },
+            .{ "Handdrawn", "handdrawn.html" },
+            .{ "Doodle", "doodle.html" },
             .{ "Win98", "win98.html" },
             .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" },

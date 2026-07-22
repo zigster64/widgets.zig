@@ -47,12 +47,16 @@ pub fn systemPage(io: Io) !void {
         \\      <li role="menu-item"><a href="snes.html">SNES.css</a></li>
         \\      <li role="menu-item"><a href="nes.html">NES.css</a></li>
         \\      <li role="menu-item"><a href="orbit.html">Orbit</a></li>
+        \\      <li role="menu-item"><a href="atari.html">Atari</a></li>
+        \\      <li role="menu-item"><a href="handdrawn.html">Handdrawn</a></li>
         \\    </ul>
         \\  </li>
         \\  <li role="menu-item" tabindex="0" aria-haspopup="true">Retro
         \\    <ul role="menu">
         \\      <li role="menu-item"><a href="win98.html">Win98</a></li>
         \\      <li role="menu-item"><a href="tui.html">TuiCss</a></li>
+        \\      <li role="menu-item"><a href="nes.html">NES</a></li>
+        \\      <li role="menu-item"><a href="snes.html">SNES</a></li>
         \\    </ul>
         \\  </li>
         \\</ul>
@@ -70,6 +74,8 @@ pub fn systemPage(io: Io) !void {
         .{ "🖥️", "Orbit", "orbit.html" },
         .{ "🖥️", "Snes", "snes.html" },
         .{ "🖥️", "TUI", "tui.html" },
+        .{ "🖥️", "Atari", "atari.html" },
+        .{ "🖥️", "Handdrawn", "handdrawn.html" },
         .{ "🗑️", "Trash", "#" },
     }) |icon| {
         try w.print("<a href=\"{s}\" style=\"text-align:center;width:64px;text-decoration:none;color:#000;display:inline-block\"><div style=\"font-size:24px;line-height:1.2\">{s}</div><div style=\"font-size:9px;line-height:1.1;word-wrap:break-word\">{s}</div></a>\n", .{ icon[2], icon[0], icon[1] });

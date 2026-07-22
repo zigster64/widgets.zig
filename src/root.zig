@@ -921,6 +921,18 @@ pub const NesWidget = struct {
     }
 };
 
+// ── Handdrawn.css ── (classless — uses standard HTML widgets)
+
+pub fn HanddrawnCSS(writer: *Io.Writer) HtmlWidget {
+    return Html(writer);
+// ── DoodleCSS ── (classless — uses standard HTML widgets)
+
+pub fn DoodleCSS(writer: *Io.Writer) HtmlWidget {
+    return Html(writer);
+}
+
+}
+
 // ── Atari.css ── (reuses NES widget with Atari styling overlay)
 
 pub fn AtariCSS(writer: *Io.Writer) NesWidget {
