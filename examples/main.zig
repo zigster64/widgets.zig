@@ -6,6 +6,10 @@ const pico = @import("pico.zig");
 const daisy = @import("daisy.zig");
 const jelly = @import("jelly.zig");
 const snes = @import("snes.zig");
+const nes = @import("nes.zig");
+const win98 = @import("win98.zig");
+const system = @import("system.zig");
+const orbit = @import("orbit.zig");
 
 pub fn main(init: std.process.Init) !void {
     const io = init.io;
@@ -15,4 +19,8 @@ pub fn main(init: std.process.Init) !void {
     try jelly.jellyPage(io);
     try snes.snesPage(io);
     try daisy.daisyPage(io);
+    try nes.nesPage(io);
+    try win98.win98Page(io);
+    try system.systemPage(io);
+    try orbit.orbitPage(io);
 }
