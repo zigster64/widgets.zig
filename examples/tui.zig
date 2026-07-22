@@ -35,7 +35,7 @@ pub fn tuiPage(io: Io) !void {
         for ([_][2][]const u8{
             .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Jelly", "jelly.html" },
             .{ "Daisy", "daisy.html" }, .{ "NES", "nes.html" },
-            .{ "Win98", "win98.html" }, .{ "Macintosh", "system.html" },
+            .{ "Win98", "win98.html" }, .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" }, .{ "TUI", "tui.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });

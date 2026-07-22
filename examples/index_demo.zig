@@ -19,7 +19,7 @@ pub fn indexHtml(io: Io) !void {
         \\<a href="daisy.html">Daisy</a>
         \\<a href="nes.html">NES</a>
         \\<a href="win98.html">Win98</a>
-        \\<a href="system.html">System</a>
+        \\<a href="macintosh.html">System</a>
         \\<a href="orbit.html">Orbit</a>
         \\</nav>
         \\</header>
@@ -124,7 +124,7 @@ pub fn indexGen(io: Io) !void {
                         try h.text("Win98");
                     }
                     {
-                        const a = try h.el("a", .{ .href = "system.html" });
+                        const a = try h.el("a", .{ .href = "macintosh.html" });
                         defer a.close();
                         try h.text("Macintosh");
                     }

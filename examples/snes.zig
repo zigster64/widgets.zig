@@ -41,7 +41,7 @@ pub fn snesPage(io: Io) !void {
             .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
             .{ "Win98", "win98.html" },
-            .{ "Macintosh", "system.html" },
+            .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });
