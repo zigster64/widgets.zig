@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="module" src="https://jelly-ui.com/package.js"></script>
+<title>JellyUI Demo</title>
+</head>
+<body style="padding:24px;display:flex;flex-direction:column;gap:24px;max-width:800px;margin:0 auto;font-family:system-ui">
+<jelly-theme mode="auto"><nav><a href="/"><jelly-button variant="mint" size="small">Home</jelly-button>
+</a>
+<a href="generated.html"><jelly-button variant="mint" size="small">Generated</jelly-button>
+</a>
+<a href="pico.html"><jelly-button variant="mint" size="small">Pico</jelly-button>
+</a>
+<a href="jelly.html"><jelly-button variant="mint" size="small">Jelly</jelly-button>
+</a>
+<a href="snes.html"><jelly-button variant="mint" size="small">Snes</jelly-button>
+</a>
+<a href="daisy.html"><jelly-button variant="mint" size="small">Daisy</jelly-button>
+</a>
+</nav>
+<h1>JellyUI Widgets Demo</h1>
+<jelly-card><h3>Soft-body physics. Real form controls. Zero dependencies.</h3>
+<p>Every component below is a native custom element rendered on a canvas-backed surface with tactile wobble. Dark mode, RTL, and WCAG AA built in.</p>
+</jelly-card>
+<h2>Buttons</h2>
+<jelly-button variant="azure" size="medium">azure</jelly-button>
+<jelly-button variant="rose" size="medium">rose</jelly-button>
+<jelly-button variant="amber" size="medium">amber</jelly-button>
+<jelly-button variant="mint" size="medium">mint</jelly-button>
+<jelly-button variant="graphite" size="medium">graphite</jelly-button>
+<jelly-button variant="platinum" size="medium">platinum</jelly-button>
+<jelly-button variant="white" size="medium">white</jelly-button>
+<jelly-button variant="mint" size="large">Large Mint</jelly-button>
+<jelly-button variant="rose" size="small">Small Rose</jelly-button>
+<h2>Icon Buttons</h2>
+<jelly-icon-button label="Copy" variant="azure" size="medium"></jelly-icon-button>
+<jelly-icon-button label="Trash" variant="rose" size="medium"></jelly-icon-button>
+<h2>Badges</h2>
+<jelly-badge variant="mint" size="small">New</jelly-badge>
+<jelly-badge variant="rose" size="small">Hot</jelly-badge>
+<jelly-badge variant="amber" size="small">Beta</jelly-badge>
+<h2>Signup Form</h2>
+<jelly-input label="Username" type="text" size="medium" placeholder="Choose a username"></jelly-input>
+<jelly-input label="Email" type="email" size="medium" placeholder="you@example.com"></jelly-input>
+<jelly-input label="Password" type="password" size="medium"></jelly-input>
+<jelly-select label="Country" size="medium"><jelly-option value="us">United States</jelly-option>
+<jelly-option value="ca">Canada</jelly-option>
+<jelly-option value="uk">United Kingdom</jelly-option>
+<jelly-option value="au">Australia</jelly-option>
+</jelly-select>
+<jelly-radio-group label="Account type"><jelly-radio value="free" size="medium">Free</jelly-radio>
+<jelly-radio value="pro" size="medium">Pro — $9/mo</jelly-radio>
+<jelly-radio value="enterprise" size="medium">Enterprise</jelly-radio>
+</jelly-radio-group>
+<jelly-checkbox size="medium">I agree to the Terms of Service</jelly-checkbox>
+<jelly-checkbox size="medium">Send me product updates</jelly-checkbox>
+<jelly-slider label="Experience (years)" value="5" min="0" max="20"></jelly-slider>
+<jelly-button variant="graphite" size="medium">Cancel</jelly-button>
+<jelly-button variant="mint" size="large">Create Account</jelly-button>
+<h2>Preferences</h2>
+<jelly-switch label="Dark mode" size="medium"></jelly-switch>
+<jelly-switch label="Email notifications" size="medium"></jelly-switch>
+<jelly-color label="Accent color" value="#4F46E5"></jelly-color>
+<jelly-file label="Upload avatar"></jelly-file>
+<h2>View Mode</h2>
+<jelly-segment-group size="small"><jelly-segment value="list">List</jelly-segment>
+<jelly-segment value="grid">Grid</jelly-segment>
+<jelly-segment value="map">Map</jelly-segment>
+</jelly-segment-group>
+<h2>Progress</h2>
+<jelly-progress value="72" max="100" size="medium" variant="mint"></jelly-progress>
+<jelly-progress value="45" max="100" size="medium" variant="amber"></jelly-progress>
+<h2>Loading</h2>
+<jelly-loading></jelly-loading>
+<h2>Tabs</h2>
+<jelly-tabs><jelly-tab>Overview</jelly-tab>
+<jelly-tab>Billing</jelly-tab>
+<jelly-tab>Team</jelly-tab>
+<jelly-tab>Settings</jelly-tab>
+</jelly-tabs>
+<h2>Navigation</h2>
+<jelly-breadcrumbs size="small"><a href="#">Home</a>
+<a href="#">Settings</a>
+<span>Profile</span>
+</jelly-breadcrumbs>
+<h2>Pagination</h2>
+<jelly-pagination total="24" page="2" size="small"></jelly-pagination>
+<h2>Resizable Panes</h2>
+<jelly-resizable direction="row"><div>Left</div>
+<div>Right</div>
+</jelly-resizable>
+<h2>Overlays</h2>
+<jelly-tooltip text="Copy link" placement="top" size="small"><jelly-button variant="mint" size="small">Hover for tooltip</jelly-button>
+</jelly-tooltip>
+<jelly-popover placement="bottom" size="medium" label="Actions"><jelly-button slot="trigger" variant="mint" size="small">Options</jelly-button>
+<div slot="content">Export, share, or delete this item.</div>
+</jelly-popover>
+<jelly-menu placement="bottom" size="small"><jelly-button slot="trigger" variant="amber" size="small">Actions</jelly-button>
+<jelly-menu-item value="edit">Edit</jelly-menu-item>
+<jelly-menu-item value="duplicate">Duplicate</jelly-menu-item>
+<jelly-menu-item value="delete">Delete</jelly-menu-item>
+</jelly-menu>
+<jelly-button variant="azure" size="medium">Open Dialog</jelly-button>
+<jelly-dialog label="Delete Project"><p>This action is permanent and cannot be undone.</p>
+<jelly-button variant="graphite" size="small">Cancel</jelly-button>
+<jelly-button variant="rose" size="small">Delete</jelly-button>
+</jelly-dialog>
+<jelly-button variant="mint" size="medium">Open Drawer</jelly-button>
+<jelly-drawer side="end" label="Navigation Drawer"><h3>Dashboard</h3>
+<p>Projects, reports, and settings live here.</p>
+</jelly-drawer>
+<h2>Avatar</h2>
+<jelly-avatar src="https://placehold.co/48x48" alt="User" size="large"></jelly-avatar>
+</jelly-theme>
+</body>
+</html>
