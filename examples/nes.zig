@@ -35,7 +35,8 @@ pub fn nesPage(io: Io) !void {
         for ([_][2][]const u8{
             .{ "Home", "/" }, .{ "Generated", "generated.html" }, .{ "Pico", "pico.html" },
             .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" }, .{ "Daisy", "daisy.html" },
-            .{ "NES", "nes.html" }, .{ "Win98", "win98.html" },
+            .{ "NES", "nes.html" },
+            .{ "Atari", "atari.html" }, .{ "Win98", "win98.html" },
             .{ "Macintosh", "macintosh.html" }, .{ "Orbit", "orbit.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });

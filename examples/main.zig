@@ -11,6 +11,7 @@ const win98 = @import("win98.zig");
 const system = @import("system.zig");
 const orbit = @import("orbit.zig");
 const tui = @import("tui.zig");
+const atari = @import("atari.zig");
 
 pub fn main(init: std.process.Init) !void {
     const io = init.io;
@@ -25,4 +26,5 @@ pub fn main(init: std.process.Init) !void {
     try system.systemPage(io);
     try orbit.orbitPage(io);
     try tui.tuiPage(io);
+    try atari.atariPage(io);
 }

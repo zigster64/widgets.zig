@@ -18,6 +18,7 @@ pub fn indexHtml(io: Io) !void {
         \\<a href="snes.html">Snes</a>
         \\<a href="daisy.html">Daisy</a>
         \\<a href="nes.html">NES</a>
+        \\<a href="atari.html">Atari</a>
         \\<a href="win98.html">Win98</a>
         \\<a href="macintosh.html">System</a>
         \\<a href="orbit.html">Orbit</a>

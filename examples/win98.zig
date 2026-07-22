@@ -38,6 +38,7 @@ pub fn win98Page(io: Io) !void {
             .{ "Jelly", "jelly.html" },
             .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
+            .{ "Atari", "atari.html" },
             .{ "Win98", "win98.html" },
             .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" },

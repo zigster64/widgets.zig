@@ -921,6 +921,12 @@ pub const NesWidget = struct {
     }
 };
 
+// ── Atari.css ── (reuses NES widget with Atari styling overlay)
+
+pub fn AtariCSS(writer: *Io.Writer) NesWidget {
+    return NesCSS(writer);
+}
+
 // ── 98.css ──
 
 pub fn Win98CSS(writer: *Io.Writer) Win98Widget {

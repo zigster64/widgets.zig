@@ -2,7 +2,6 @@ const std = @import("std");
 const Io = std.Io;
 const Dir = Io.Dir;
 const widgets_zig = @import("widgets_zig");
-const Or = widgets_zig;
 
 pub fn orbitPage(io: Io) !void {
     const dir = Dir.cwd();
@@ -22,140 +21,151 @@ pub fn orbitPage(io: Io) !void {
         \\<link rel="stylesheet" href="https://unpkg.com/@zumer/orbit@latest/dist/orbit.css">
         \\<script src="https://unpkg.com/@zumer/orbit@latest/dist/orbit.js"></script>
         \\<title>Orbit Demo</title>
+        \\<style>
+        \\  body { background:#0a0a1a; color:#ccc; padding:24px; font-family:system-ui; margin:0; }
+        \\  h1 { font-size:28px; margin-bottom:24px; color:#fff; }
+        \\  .dashboard { display:flex; gap:24px; flex-wrap:wrap; }
+        \\  .gauge { width:200px; height:200px; }
+        \\  .gauge.big { width:280px; height:280px; }
+        \\  .gauge-label { text-align:center; margin-top:8px; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
+        \\  nav { margin-bottom:24px; display:flex; gap:12px; flex-wrap:wrap; }
+        \\  nav a { color:#6cf; text-decoration:none; padding:4px 10px; border-radius:4px; }
+        \\  nav a:hover { background:#1a1a3a; }
+        \\</style>
         \\</head>
-        \\<body style="background:#0a0a1a;color:#fff;padding:24px">
+        \\<body>
         \\
     );
 
-    const h = Or.OrbitCSS(w);
-
     // Nav
+    try w.writeAll("<nav>");
+    for ([_][2][]const u8{
+        .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Daisy", "daisy.html" },
+        .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" },
+        .{ "NES", "nes.html" },
+            .{ "Atari", "atari.html" }, .{ "Win98", "win98.html" },
+        .{ "Macintosh", "macintosh.html" }, .{ "Orbit", "orbit.html" },
+    }) |link| {
+        try w.print("<a href=\"{s}\">{s}</a>", .{ link[1], link[0] });
+    }
+    try w.writeAll("</nav>\n");
+
+    try w.writeAll("<h1>Orbit Radial Dashboard</h1>\n");
+    try w.writeAll("<div class=\"dashboard\">\n");
+
+    const h = widgets_zig.OrbitCSS(w);
+
+    // Gauge: CPU
+    try w.writeAll("<div><div class=\"gauge\">");
     {
-        const nav = try h.html.el("nav", .{});
-        defer nav.close();
-        for ([_][2][]const u8{
-            .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Daisy", "daisy.html" },
-            .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" },
-            .{ "NES", "nes.html" }, .{ "Win98", "win98.html" },
-            .{ "Macintosh", "macintosh.html" }, .{ "Orbit", "orbit.html" },
-        }) |link| {
-            const a = try h.html.el("a", .{ .href = link[1] });
+        const bb = try h.bigbang("theme-cyan");
+        defer bb.close();
+        const gs = try h.gravitySpot();
+        defer gs.close();
+        {
+            const o = try h.orbit(1, 270);
+            defer o.close();
+            const p = try h.progress(72);
+            defer p.close();
+        }
+        {
+            const o = try h.orbit(2, 270);
+            defer o.close();
+            const p = try h.progress(45);
+            defer p.close();
+        }
+        {
+            const s = try h.satellite();
+            defer s.close();
+            const cp = try h.capsule();
+            defer cp.close();
+            try h.html.text("CPU 72%");
+        }
+    }
+    try w.writeAll("</div><div class=\"gauge-label\">CPU Usage</div></div>\n");
+
+    // Gauge: RAM
+    try w.writeAll("<div><div class=\"gauge\">");
+    {
+        const bb = try h.bigbang("theme-cyan");
+        defer bb.close();
+        const gs = try h.gravitySpot();
+        defer gs.close();
+        {
+            const o = try h.orbit(1, 360);
+            defer o.close();
+            const p = try h.progress(88);
+            defer p.close();
+        }
+        {
+            const o = try h.orbit(2, 360);
+            defer o.close();
+            const p = try h.progress(60);
+            defer p.close();
+        }
+        {
+            const s = try h.satellite();
+            defer s.close();
+            const cp = try h.capsule();
+            defer cp.close();
+            try h.html.text("RAM 88%");
+        }
+    }
+    try w.writeAll("</div><div class=\"gauge-label\">Memory</div></div>\n");
+
+    // Gauge: Disk
+    try w.writeAll("<div><div class=\"gauge\">");
+    {
+        const bb = try h.bigbang("theme-cyan");
+        defer bb.close();
+        const gs = try h.gravitySpot();
+        defer gs.close();
+        {
+            const o = try h.orbit(2, 180);
+            defer o.close();
+            const a = try h.arc(55, "arrow");
             defer a.close();
-            try h.html.text(link[0]);
+        }
+        {
+            const s = try h.satellite();
+            defer s.close();
+            const cp = try h.capsule();
+            defer cp.close();
+            try h.html.text("Disk 55%");
         }
     }
+    try w.writeAll("</div><div class=\"gauge-label\">Disk Space</div></div>\n");
 
-    // ── Dashboard row ──
+    // Gauge: Network (larger)
+    try w.writeAll("<div><div class=\"gauge big\">");
     {
-        const row = try h.html.el("div", .{ .class = "display:flex;gap:24px" });
-        defer row.close();
-
-        // Gauge 1: Progress ring
+        const bb = try h.bigbang("theme-cyan");
+        defer bb.close();
+        const gs = try h.gravitySpot();
+        defer gs.close();
         {
-            const bb = try h.bigbang("theme-cyan");
-            defer bb.close();
-            const gs = try h.gravitySpot();
-            defer gs.close();
-            {
-                const o = try h.orbit(2, 270);
-                defer o.close();
-                const p = try h.progress(72);
-                defer p.close();
-            }
-            {
-                const o = try h.orbit(3, 270);
-                defer o.close();
-                const p = try h.progress(45);
-                defer p.close();
-            }
-            {
-                const s = try h.satellite();
-                defer s.close();
-                const cp = try h.capsule();
-                defer cp.close();
-                try h.html.text("CPU");
-            }
+            const o = try h.orbit(2, 240);
+            defer o.close();
+            const p = try h.progress(35);
+            defer p.close();
         }
-
-        // Gauge 2: Full circle
         {
-            const bb = try h.bigbang("theme-cyan");
-            defer bb.close();
-            const gs = try h.gravitySpot();
-            defer gs.close();
-            {
-                const o = try h.orbit(1, 360);
-                defer o.close();
-                const p = try h.progress(88);
-                defer p.close();
-            }
-            {
-                const o = try h.orbit(2, 360);
-                defer o.close();
-                const p = try h.progress(60);
-                defer p.close();
-            }
-            {
-                const s = try h.satellite();
-                defer s.close();
-                const cp = try h.capsule();
-                defer cp.close();
-                try h.html.text("RAM");
-            }
+            const o = try h.orbit(3, 240);
+            defer o.close();
+            const a = try h.arc(65, null);
+            defer a.close();
         }
-
-        // Gauge 3: Arc with arrow shape
         {
-            const bb = try h.bigbang("theme-cyan");
-            defer bb.close();
-            const gs = try h.gravitySpot();
-            defer gs.close();
-            {
-                const o = try h.orbit(3, 180);
-                defer o.close();
-                const a = try h.arc(55, "arrow");
-                defer a.close();
-            }
-            {
-                const s = try h.satellite();
-                defer s.close();
-                const cp = try h.capsule();
-                defer cp.close();
-                try h.html.text("Speed");
-            }
+            const s = try h.satellite();
+            defer s.close();
+            const cp = try h.capsule();
+            defer cp.close();
+            try h.html.text("Network");
         }
     }
+    try w.writeAll("</div><div class=\"gauge-label\">Network I/O</div></div>\n");
 
-    // ── Large single gauge ──
-    {
-        const section = try h.html.el("div", .{ .class = "margin-top:24px;display:flex;justify-content:center" });
-        defer section.close();
-        {
-            const bb = try h.bigbang("theme-cyan");
-            defer bb.close();
-            const gs = try h.gravitySpot();
-            defer gs.close();
-            {
-                const o = try h.orbit(4, 270);
-                defer o.close();
-                const p = try h.progress(82);
-                defer p.close();
-            }
-            {
-                const o = try h.orbit(5, 270);
-                defer o.close();
-                const a = try h.arc(35, null);
-                defer a.close();
-            }
-            {
-                const s = try h.satellite();
-                defer s.close();
-                const cp = try h.capsule();
-                defer cp.close();
-                try h.html.text("Orbit CSS");
-            }
-        }
-    }
+    try w.writeAll("</div>\n"); // close dashboard
 
     try w.writeAll("</body>\n</html>\n");
     try fw.flush();

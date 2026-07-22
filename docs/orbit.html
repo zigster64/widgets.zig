@@ -6,49 +6,56 @@
 <link rel="stylesheet" href="https://unpkg.com/@zumer/orbit@latest/dist/orbit.css">
 <script src="https://unpkg.com/@zumer/orbit@latest/dist/orbit.js"></script>
 <title>Orbit Demo</title>
+<style>
+  body { background:#0a0a1a; color:#ccc; padding:24px; font-family:system-ui; margin:0; }
+  h1 { font-size:28px; margin-bottom:24px; color:#fff; }
+  .dashboard { display:flex; gap:24px; flex-wrap:wrap; }
+  .gauge { width:200px; height:200px; }
+  .gauge.big { width:280px; height:280px; }
+  .gauge-label { text-align:center; margin-top:8px; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
+  nav { margin-bottom:24px; display:flex; gap:12px; flex-wrap:wrap; }
+  nav a { color:#6cf; text-decoration:none; padding:4px 10px; border-radius:4px; }
+  nav a:hover { background:#1a1a3a; }
+</style>
 </head>
-<body style="background:#0a0a1a;color:#fff;padding:24px">
-<nav><a href="/">Home</a>
-<a href="pico.html">Pico</a>
-<a href="daisy.html">Daisy</a>
-<a href="jelly.html">Jelly</a>
-<a href="snes.html">Snes</a>
-<a href="nes.html">NES</a>
-<a href="win98.html">Win98</a>
-<a href="macintosh.html">Macintosh</a>
-<a href="orbit.html">Orbit</a>
-</nav>
-<div class="display:flex;gap:24px"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-2 range-270"><o-progress value="72"></o-progress>
+<body>
+<nav><a href="/">Home</a><a href="pico.html">Pico</a><a href="daisy.html">Daisy</a><a href="jelly.html">Jelly</a><a href="snes.html">Snes</a><a href="nes.html">NES</a><a href="atari.html">Atari</a><a href="win98.html">Win98</a><a href="macintosh.html">Macintosh</a><a href="orbit.html">Orbit</a></nav>
+<h1>Orbit Radial Dashboard</h1>
+<div class="dashboard">
+<div><div class="gauge"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-1 range-270"><o-progress value="72"></o-progress>
 </div>
-<div class="orbit-3 range-270"><o-progress value="45"></o-progress>
+<div class="orbit-2 range-270"><o-progress value="45"></o-progress>
 </div>
-<div class="satellite"><div class="capsule">CPU</div>
+<div class="satellite"><div class="capsule">CPU 72%</div>
 </div>
 </div>
 </div>
-<div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-1 range-360"><o-progress value="88"></o-progress>
+</div><div class="gauge-label">CPU Usage</div></div>
+<div><div class="gauge"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-1 range-360"><o-progress value="88"></o-progress>
 </div>
 <div class="orbit-2 range-360"><o-progress value="60"></o-progress>
 </div>
-<div class="satellite"><div class="capsule">RAM</div>
+<div class="satellite"><div class="capsule">RAM 88%</div>
 </div>
 </div>
 </div>
-<div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-3 range-180"><o-arc value="55" shape="arrow"></o-arc>
+</div><div class="gauge-label">Memory</div></div>
+<div><div class="gauge"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-2 range-180"><o-arc value="55" shape="arrow"></o-arc>
 </div>
-<div class="satellite"><div class="capsule">Speed</div>
-</div>
-</div>
-</div>
-</div>
-<div class="margin-top:24px;display:flex;justify-content:center"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-4 range-270"><o-progress value="82"></o-progress>
-</div>
-<div class="orbit-5 range-270"><o-arc value="35"></o-arc>
-</div>
-<div class="satellite"><div class="capsule">Orbit CSS</div>
+<div class="satellite"><div class="capsule">Disk 55%</div>
 </div>
 </div>
 </div>
+</div><div class="gauge-label">Disk Space</div></div>
+<div><div class="gauge big"><div class="bigbang theme-cyan"><div class="gravity-spot"><div class="orbit-2 range-240"><o-progress value="35"></o-progress>
+</div>
+<div class="orbit-3 range-240"><o-arc value="65"></o-arc>
+</div>
+<div class="satellite"><div class="capsule">Network</div>
+</div>
+</div>
+</div>
+</div><div class="gauge-label">Network I/O</div></div>
 </div>
 </body>
 </html>

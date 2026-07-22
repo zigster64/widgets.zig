@@ -40,6 +40,7 @@ pub fn snesPage(io: Io) !void {
             .{ "Snes", "snes.html" },
             .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
+            .{ "Atari", "atari.html" },
             .{ "Win98", "win98.html" },
             .{ "Macintosh", "macintosh.html" },
             .{ "Orbit", "orbit.html" },
