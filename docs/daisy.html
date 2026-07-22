@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<title>DaisyUI Demo</title>
+</head>
+<body class="p-6 max-w-4xl mx-auto">
+<div class="navbar bg-base-100"><div class="flex-1"><a class="btn btn-ghost text-xl">DaisyUI Demo</a>
+</div>
+<div class="flex-none"><a class="btn btn-ghost btn-sm" href="/">Home</a>
+<a class="btn btn-ghost btn-sm" href="generated.html">Generated</a>
+<a class="btn btn-ghost btn-sm" href="pico.html">Pico</a>
+<a class="btn btn-ghost btn-sm" href="jelly.html">Jelly</a>
+<a class="btn btn-ghost btn-sm" href="snes.html">Snes</a>
+<a class="btn btn-ghost btn-sm" href="daisy.html">Daisy</a>
+</div>
+</div>
+<div class="hero bg-base-200"><div class="hero-content text-center"><h1 class="text-5xl font-bold">DaisyUI Widgets Demo<p class="py-6">Tailwind CSS components with semantic classes. Every component below uses DaisyUI's class-based API.</p>
+</h1>
+</div>
+</div>
+<div class="divider divider-primary">Buttons</div>
+<div class="join"><button class="btn btn-primary btn-md">primary</button>
+<button class="btn btn-secondary btn-md">secondary</button>
+<button class="btn btn-accent btn-md">accent</button>
+<button class="btn btn-neutral btn-md">neutral</button>
+<button class="btn btn-ghost btn-md">ghost</button>
+<button class="btn btn-link btn-md">link</button>
+<button class="btn btn-outline btn-md">outline</button>
+<button class="btn btn-dash btn-md">dash</button>
+<button class="btn btn-soft btn-md">soft</button>
+</div>
+<div class="divider divider-secondary">Badges</div>
+<div class="badge badge-primary badge-lg">primary</div>
+<div class="badge badge-secondary badge-lg">secondary</div>
+<div class="badge badge-accent badge-lg">accent</div>
+<div class="badge badge-info badge-lg">info</div>
+<div class="badge badge-success badge-lg">success</div>
+<div class="badge badge-warning badge-lg">warning</div>
+<div class="badge badge-error badge-lg">err</div>
+<div class="divider divider-info">Alerts</div>
+<div class="alert alert-info"><span>New update available!</span>
+</div>
+<div class="alert alert-success"><span>Purchase completed successfully.</span>
+</div>
+<div class="alert alert-warning"><span>Your storage is almost full.</span>
+</div>
+<div class="alert alert-error"><span>Something went wrong.</span>
+</div>
+<div class="divider divider-success">Stats</div>
+<div class="stats shadow"><div class="stat"><div class="stat-title">Downloads</div>
+<div class="stat-value">2.4M</div>
+<div class="stat-desc">↑ 14% in the last month</div>
+</div>
+<div class="stat"><div class="stat-title">Users</div>
+<div class="stat-value">84K</div>
+<div class="stat-desc">↑ 7% vs last quarter</div>
+</div>
+<div class="stat"><div class="stat-title">Uptime</div>
+<div class="stat-value">99.9%</div>
+<div class="stat-desc">↗︎ 0.1% improvement</div>
+</div>
+</div>
+<div class="avatar"><div class="w-16 rounded-full"><img src="https://placehold.co/48x48" /></div>
+</div>
+<div class="divider divider-accent">Cards</div>
+<div class="grid grid-cols-3 gap-4"><div class="card bg-base-200 shadow-xl"><div class="card-body"><h2 class="card-title">Card One<p>DaisyUI cards work with Tailwind classes for responsive layouts.</p>
+<button class="btn btn-primary btn-sm">Read more</button>
+</h2>
+</div>
+</div>
+<div class="card bg-base-200 shadow-xl"><div class="card-body"><h2 class="card-title">Card Two<p>DaisyUI cards work with Tailwind classes for responsive layouts.</p>
+<button class="btn btn-primary btn-sm">Read more</button>
+</h2>
+</div>
+</div>
+<div class="card bg-base-200 shadow-xl"><div class="card-body"><h2 class="card-title">Card Three<p>DaisyUI cards work with Tailwind classes for responsive layouts.</p>
+<button class="btn btn-primary btn-sm">Read more</button>
+</h2>
+</div>
+</div>
+</div>
+<div class="divider divider-primary">Form</div>
+<form class="flex flex-col gap-4 max-w-md"><input class="input input-bordered" type="text" placeholder="Username">
+<input class="input input-bordered" type="email" placeholder="Email">
+<input class="input input-bordered" type="password" placeholder="Password">
+<select class="select select-bordered"></select>
+<textarea class="textarea textarea-bordered" placeholder="Your message..."></textarea>
+<div class="flex gap-2 items-center"><input class="checkbox checkbox-primary" type="checkbox">
+<span class="text-sm">I agree to the terms</span>
+<div class="flex gap-4 items-center"><input class="radio radio-secondary" type="radio">
+<span class="text-sm">Option A</span>
+<input class="radio radio-accent" type="radio">
+<span class="text-sm">Option B</span>
+</div>
+</div>
+<div class="flex gap-2 items-center"><input class="toggle toggle-primary" type="checkbox">
+<span class="text-sm">Enable notifications</span>
+</div>
+<input class="range range-accent" type="range">
+<div class="flex gap-2"><button class="btn btn-primary btn-md">Submit<button class="btn btn-ghost btn-md">Cancel</button>
+</button>
+</div>
+</form>
+<div class="divider divider-warning">Progress</div>
+<progress class="progress progress-primary w-56" value="72" max="100"></progress>
+<progress class="progress progress-success w-56" value="45" max="100"></progress>
+<div class="divider divider-info">Loading</div>
+<span class="loading loading-lg loading-primary"></span>
+<span class="loading loading-md loading-accent"></span>
+<div class="divider divider-secondary">Steps</div>
+<ul class="steps"><li class="step step-primary">Register</li>
+<li class="step step-primary">Verify</li>
+<li class="step">Complete</li>
+</ul>
+<div class="divider divider-primary">Tabs</div>
+<div class="tabs"><a class="tab tab-active">Overview</a>
+<a class="tab">Billing</a>
+<a class="tab">Settings</a>
+</div>
+<div class="divider divider-neutral">Collapse</div>
+<div class="collapse bg-base-200"><input type="checkbox">
+<div class="collapse-title text-xl font-medium">Click to expand<div class="collapse-content">This content is hidden by default.</div>
+</div>
+</div>
+<div class="divider divider-primary">More Components</div>
+<div class="breadcrumbs text-sm"><ul><li><a href="#">Home</a>
+</li>
+<li><a href="#">Docs</a>
+</li>
+<li><a href="#">Components</a>
+</li>
+</ul>
+</div>
+<div class="tooltip" data-tip="This is a tooltip"><button class="btn btn-primary btn-sm">Hover me</button>
+</div>
+<div class="skeleton h-4 w-full"></div>
+<ul class="menu bg-base-200 rounded-box"><li><a href="#">Dashboard</a>
+</li>
+<li><a href="#">Settings</a>
+</li>
+<li><a href="#">Logout</a>
+</li>
+</ul>
+<div class="stack"><div class="bg-primary text-primary-content p-4 rounded">Top</div>
+<div class="bg-secondary text-secondary-content p-4 rounded">Bottom</div>
+</div>
+<div class="mockup-code"><pre><code>const h = DaisyUI(w);</code>
+</pre>
+</div>
+<div class="divider divider-accent">Table</div>
+<table class="table"><thead><tr><th>Name</th>
+<th>Role</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr><td>Zig</td>
+<td>Language</td>
+<td>Active</td>
+</tr>
+<tr><td>DaisyUI</td>
+<td>UI Library</td>
+<td>Active</td>
+</tr>
+<tr><td>Widgets</td>
+<td>Toolkit</td>
+<td>Building</td>
+</tr>
+</tbody>
+</table>
+<div class="divider divider-neutral">Footer</div>
+<footer class="footer bg-neutral text-neutral-content p-10"><aside><p>Built with Widgets.zig + DaisyUI</p>
+</aside>
+</footer>
+</body>
+</html>

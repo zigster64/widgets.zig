@@ -37,8 +37,8 @@ pub fn indexHtml(io: Io) !void {
     ;
 
     const dir = Dir.cwd();
-    try Dir.createDirPath(dir, io, "examples/html");
-    const file = try Dir.createFile(dir, io, "examples/html/index.html", .{});
+    try Dir.createDirPath(dir, io, "docs");
+    const file = try Dir.createFile(dir, io, "docs/index.html", .{});
     defer file.close(io);
     try file.writeStreamingAll(io, html);
     std.log.info("created index.html ({d} bytes)", .{html.len});
@@ -46,7 +46,7 @@ pub fn indexHtml(io: Io) !void {
 
 pub fn indexGen(io: Io) !void {
     const dir = Dir.cwd();
-    const file = try Dir.createFile(dir, io, "examples/html/generated.html", .{});
+    const file = try Dir.createFile(dir, io, "docs/generated.html", .{});
     defer file.close(io);
 
     var buf: [4096]u8 = undefined;

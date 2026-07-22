@@ -544,7 +544,7 @@ pub const SnesWidget = struct {
 
 // ── DaisyUI ──
 
-pub const DuColor = enum { primary, secondary, accent, neutral, info, success, warning, error, ghost };
+pub const DuColor = enum { primary, secondary, accent, neutral, info, success, warning, err, ghost };
 pub const DuSize = enum { xs, sm, md, lg, xl };
 pub const DuBtnVariant = enum { primary, secondary, accent, neutral, ghost, link, outline, dash, soft };
 
@@ -556,7 +556,10 @@ pub const DaisyWidget = struct {
     html: HtmlWidget,
 
     fn colorClass(c: DuColor) []const u8 {
-        return @tagName(c);
+        return switch (c) {
+            .err => "error",
+            else => @tagName(c),
+        };
     }
     fn sizeClass(s: DuSize) []const u8 {
         return @tagName(s);
@@ -576,7 +579,7 @@ pub const DaisyWidget = struct {
     /// `<div class="badge badge-COLOR badge-SIZE">txt</div>`
     pub fn badge(self: DaisyWidget, txt: []const u8, color: DuColor, size: DuSize) !Closer {
         var class_buf: [64]u8 = undefined;
-        const cls = std.fmt.bufPrint(&class_buf, "badge badge-{s} badge-{s}", .{ @tagName(color), @tagName(size) }) catch "badge";
+        const cls = std.fmt.bufPrint(&class_buf, "badge badge-{s} badge-{s}", .{ colorClass(color), @tagName(size) }) catch "badge";
         const c = try self.html.el("div", .{ .class = cls });
         try self.html.writer.writeAll(txt);
         return c;
@@ -600,7 +603,7 @@ pub const DaisyWidget = struct {
     /// `<div class="alert alert-COLOR">...</div>`
     pub fn alert(self: DaisyWidget, color: DuColor) !Closer {
         var class_buf: [64]u8 = undefined;
-        const cls = std.fmt.bufPrint(&class_buf, "alert alert-{s}", .{@tagName(color)}) catch "alert";
+        const cls = std.fmt.bufPrint(&class_buf, "alert alert-{s}", .{colorClass(color)}) catch "alert";
         return self.html.el("div", .{ .class = cls });
     }
 
@@ -608,9 +611,10 @@ pub const DaisyWidget = struct {
     pub fn avatar(self: DaisyWidget, src: []const u8, size: DuSize) !Closer {
         const c = try self.html.el("div", .{ .class = "avatar" });
         var class_buf: [32]u8 = undefined;
-        const inner_cls = std.fmt.bufPrint(&class_buf, "w-{d} rounded-full", .{@intFromEnum(size) * 4 + 8}) catch "w-12 rounded-full";
+        const size_px = @as(u32, @intFromEnum(size)) * 4 + 8;
+        const inner_cls = std.fmt.bufPrint(&class_buf, "w-{d} rounded-full", .{size_px}) catch "w-12 rounded-full";
         const inner = try self.html.el("div", .{ .class = inner_cls });
-        _ = inner; // defer closes inner before avatar
+        defer inner.close();
         try self.html.writer.print("<img src=\"{s}\" />", .{src});
         return c;
     }
@@ -740,7 +744,7 @@ pub const DaisyWidget = struct {
     /// `<progress class="progress progress-COLOR w-56" value="..." max="100">`
     pub fn progress(self: DaisyWidget, value: u32, color: DuColor) !Closer {
         var class_buf: [32]u8 = undefined;
-        const cls = std.fmt.bufPrint(&class_buf, "progress progress-{s} w-56", .{@tagName(color)}) catch "progress";
+        const cls = std.fmt.bufPrint(&class_buf, "progress progress-{s} w-56", .{colorClass(color)}) catch "progress";
         return self.html.el("progress", .{ .class = cls, .value = value, .max = 100 });
     }
 

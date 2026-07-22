@@ -38,8 +38,8 @@ pub fn build(b: *std.Build) void {
     const exe_tests = b.addTest(.{ .root_module = exe.root_module });
     const run_exe_tests = b.addRunArtifact(exe_tests);
 
-    const serve_step = b.step("serve", "Serve examples/html on :8000");
-    const serve_cmd = b.addSystemCommand(&.{ "python3", "-m", "http.server", "8000", "--directory", "examples/html" });
+    const serve_step = b.step("serve", "Serve docs on :8000");
+    const serve_cmd = b.addSystemCommand(&.{ "python3", "-m", "http.server", "8000", "--directory", "docs" });
     serve_step.dependOn(&serve_cmd.step);
 
     const test_step = b.step("test", "Run tests");

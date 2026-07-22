@@ -6,7 +6,7 @@ const Jl = widgets_zig;
 
 pub fn jellyPage(io: Io) !void {
     const dir = Dir.cwd();
-    const file = try Dir.createFile(dir, io, "examples/html/jelly.html", .{});
+    const file = try Dir.createFile(dir, io, "docs/jelly.html", .{});
     defer file.close(io);
 
     var buf: [16384]u8 = undefined;

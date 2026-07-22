@@ -14,5 +14,5 @@ pub fn main(init: std.process.Init) !void {
     try pico.picoPage(io);
     try jelly.jellyPage(io);
     try snes.snesPage(io);
-    daisy.daisyPage();
+    try daisy.daisyPage(io);
 }

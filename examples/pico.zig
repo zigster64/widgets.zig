@@ -5,7 +5,7 @@ const widgets_zig = @import("widgets_zig");
 
 pub fn picoPage(io: Io) !void {
     const dir = Dir.cwd();
-    const file = try Dir.createFile(dir, io, "examples/html/pico.html", .{});
+    const file = try Dir.createFile(dir, io, "docs/pico.html", .{});
     defer file.close(io);
 
     var buf: [16384]u8 = undefined;

@@ -6,7 +6,7 @@ const Sn = widgets_zig;
 
 pub fn snesPage(io: Io) !void {
     const dir = Dir.cwd();
-    const file = try Dir.createFile(dir, io, "examples/html/snes.html", .{});
+    const file = try Dir.createFile(dir, io, "docs/snes.html", .{});
     defer file.close(io);
 
     var buf: [16384]u8 = undefined;
