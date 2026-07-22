@@ -24,6 +24,7 @@ pub fn indexHtml(io: Io) !void {
         \\<a href="orbit.html">Orbit</a>
         \\<a href="tui.html">TUI</a>
         \\<a href="handdrawn.html">Handdrawn</a>
+        \\<a href="doodle.html">Doodle</a>
         \\</nav>
         \\</header>
         \\<main><section class="content"><p>Welcome to the <span class="highlight">widgets</span>

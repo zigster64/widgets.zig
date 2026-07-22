@@ -13,6 +13,7 @@ const orbit = @import("orbit.zig");
 const tui = @import("tui.zig");
 const atari = @import("atari.zig");
 const handdrawn = @import("handdrawn.zig");
+const doodle = @import("doodle.zig");
 
 pub fn main(init: std.process.Init) !void {
     const io = init.io;

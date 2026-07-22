@@ -48,7 +48,8 @@ pub fn systemPage(io: Io) !void {
         \\      <li role="menu-item"><a href="nes.html">NES.css</a></li>
         \\      <li role="menu-item"><a href="orbit.html">Orbit</a></li>
         \\      <li role="menu-item"><a href="atari.html">Atari</a></li>
-        \\      <li role="menu-item"><a href="handdrawn.html">Handdrawn</a></li>
+        \\      <li role="menu-item"><a href="handdrawn.html">Handdrawn</a>
+        \\<li role="menu-item"><a href="doodle.html">Doodle</a></li></li>
         \\    </ul>
         \\  </li>
         \\  <li role="menu-item" tabindex="0" aria-haspopup="true">Retro
@@ -76,6 +77,7 @@ pub fn systemPage(io: Io) !void {
         .{ "🖥️", "TUI", "tui.html" },
         .{ "🖥️", "Atari", "atari.html" },
         .{ "🖥️", "Handdrawn", "handdrawn.html" },
+        .{ "🖥️", "Doodle", "doodle.html" },
         .{ "🗑️", "Trash", "#" },
     }) |icon| {
         try w.print("<a href=\"{s}\" style=\"text-align:center;width:64px;text-decoration:none;color:#000;display:inline-block\"><div style=\"font-size:24px;line-height:1.2\">{s}</div><div style=\"font-size:9px;line-height:1.1;word-wrap:break-word\">{s}</div></a>\n", .{ icon[2], icon[0], icon[1] });
