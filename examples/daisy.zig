@@ -52,7 +52,7 @@ pub fn daisyPage(io: Io) !void {
                 .{ "Daisy", "daisy.html" },
             .{ "NES", "nes.html" },
             .{ "Win98", "win98.html" },
-            .{ "System", "system.html" },
+            .{ "Macintosh", "system.html" },
             .{ "Orbit", "orbit.html" },
             }) |link| {
                 const a = try h.html.el("a", .{ .class = "btn btn-ghost btn-sm", .href = link[1] });

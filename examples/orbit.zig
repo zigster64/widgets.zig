@@ -37,7 +37,7 @@ pub fn orbitPage(io: Io) !void {
             .{ "Home", "/" }, .{ "Pico", "pico.html" }, .{ "Daisy", "daisy.html" },
             .{ "Jelly", "jelly.html" }, .{ "Snes", "snes.html" },
             .{ "NES", "nes.html" }, .{ "Win98", "win98.html" },
-            .{ "System", "system.html" }, .{ "Orbit", "orbit.html" },
+            .{ "Macintosh", "system.html" }, .{ "Orbit", "orbit.html" },
         }) |link| {
             const a = try h.html.el("a", .{ .href = link[1] });
             defer a.close();

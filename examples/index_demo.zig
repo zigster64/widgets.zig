@@ -126,7 +126,7 @@ pub fn indexGen(io: Io) !void {
                     {
                         const a = try h.el("a", .{ .href = "system.html" });
                         defer a.close();
-                        try h.text("System");
+                        try h.text("Macintosh");
                     }
                     {
                         const a = try h.el("a", .{ .href = "orbit.html" });
