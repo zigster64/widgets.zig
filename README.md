@@ -48,7 +48,8 @@ As you can imagine, this format will get real ugly real fast .. to the point whe
 ## And then what ? Where we going wih this ?
 
 ```zig
-Surely, when you design a UI, you are not going to write a mountain of this gobble gaggle code just so you can swap toolkits in and out every 5 minutes ?
+Surely, when you design a UI, you are not going to write a mountain of this
+gobble gaggle code just so you can swap toolkits in and out every 5 minutes ?
 
 That seems very silly ?
 ```
