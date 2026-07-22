@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<title>PicoCSS Demo</title>
+</head>
+<body>
+<header id="top"><nav class="menu"><a href="/">Home</a>
+<a href="generated.html">Generated</a>
+<a href="pico.html">Pico</a>
+<a href="daisy.html">Daisy</a>
+<a href="jelly.html">Jelly</a>
+</nav>
+</header>
+<div class="container"><nav aria-label="breadcrumb"><ul><li><a href="#">PicoCSS Demo</a>
+</li>
+</nav>
+<h1>PicoCSS Widgets Demo</h1>
+<h2>Theme</h2>
+<button onclick="document.documentElement.setAttribute('data-theme','light')">Light</button>
+<button onclick="document.documentElement.setAttribute('data-theme','dark')" class="contrast">Dark</button>
+<nav><ul><li><strong>Acme Corp</strong>
+</li>
+</ul>
+<ul><li><a href="#" class="contrast">About</a>
+</li>
+<li><a href="#" class="contrast">Services</a>
+</li>
+<li><a href="#" class="contrast">Products</a>
+</li>
+</ul>
+</nav>
+<div class="grid"><article><h2>PicoCSS</h2>
+<p>Pico styles native HTML with zero class overhead.</p>
+</article>
+<article><h2>Semantic</h2>
+<p>Pico styles native HTML with zero class overhead.</p>
+</article>
+<article><h2>Fast CSS</h2>
+<p>Pico styles native HTML with zero class overhead.</p>
+</article>
+</div>
+<h2>Buttons</h2>
+<button>Primary</button>
+<button class="secondary">Secondary</button>
+<button class="contrast">Contrast</button>
+<button class="outline">Outline</button>
+<h2>Typography</h2>
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+<h2>Links</h2>
+<a href="#">Primary link</a>
+<a href="#" class="secondary">Secondary link</a>
+<h2>Tooltips</h2>
+<button data-tooltip="Top">Top</button>
+<button data-tooltip="Right" data-placement="Right">Right</button>
+<button data-tooltip="Bottom" data-placement="Bottom">Bottom</button>
+<button data-tooltip="Left" data-placement="Left">Left</button>
+<h2>Accordion</h2>
+<details><summary>Click to expand</summary><p>Hidden content revealed on click.</p>
+</details>
+<h2>Progress</h2>
+<progress value="65" max="100"></progress>
+<h2>Table</h2>
+<table><thead><tr><th scope="col">Name</th>
+<th scope="col">Role</th>
+</tr>
+</thead>
+<tbody><tr><td>Zig</td>
+<td>Language</td>
+</tr>
+<tr><td>PicoCSS</td>
+<td>CSS Framework</td>
+</tr>
+</tbody>
+</table>
+<h2>Range</h2>
+<input type="range" min="0" max="100" value="50">
+<h2>Switch</h2>
+<label for="switch-demo"><input type="checkbox" id="switch-demo" role="switch">
+ Enable notifications</label>
+<h2>Radios</h2>
+<fieldset><label for="Option A"><input type="radio" id="Option A" name="radios">
+ Option A</label>
+<label for="Option B"><input type="radio" id="Option B" name="radios">
+ Option B</label>
+<label for="Option C"><input type="radio" id="Option C" name="radios">
+ Option C</label>
+</fieldset>
+<h2>Checkboxes</h2>
+<fieldset><label for="Check A"><input type="checkbox" id="Check A" name="checks">
+ Check A</label>
+<label for="Check B"><input type="checkbox" id="Check B" name="checks">
+ Check B</label>
+</fieldset>
+<h2>Signup Form</h2>
+<form><label for="username">Username<input type="text" id="username" name="username" placeholder="Choose a username" required="true">
+</label>
+<label for="password">Password<input type="password" id="password" name="password" placeholder="At least 8 characters" required="true">
+</label>
+<label for="experience">Experience (years)<input type="range" id="experience" name="experience" min="0" max="20" value="3">
+</label>
+<label for="country">Country<select id="country" name="country"><option value="United States">United States</option>
+<option value="Canada">Canada</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="Australia">Australia</option>
+</select>
+</label>
+<fieldset><legend>Account type</legend>
+<label for="Free"><input type="radio" id="Free" name="account" value="Free">
+ Free</label>
+<label for="Premium"><input type="radio" id="Premium" name="account" value="Premium">
+ Premium</label>
+<label for="Enterprise"><input type="radio" id="Enterprise" name="account" value="Enterprise">
+ Enterprise</label>
+</fieldset>
+<fieldset><label for="terms"><input type="checkbox" id="terms" name="terms" required="true">
+ I agree to the Terms of Service</label>
+<label for="marketing"><input type="checkbox" id="marketing" name="marketing">
+ Send me product updates</label>
+</fieldset>
+<button class="secondary">Cancel</button>
+<button>Sign Up</button>
+</form>
+<h2>Select</h2>
+<label for="framework">Framework<select id="framework" name="framework"><option value="PicoCSS">PicoCSS</option>
+<option value="Bootstrap">Bootstrap</option>
+<option value="Tailwind">Tailwind</option>
+</select>
+</label>
+<h2>Group</h2>
+<form><fieldset role="group"><input name="email2" type="email" placeholder="Enter your email" autocomplete="email">
+<input type="submit" value="Subscribe">
+</fieldset>
+</form>
+<h2>Textarea</h2>
+<label for="msg">Message<textarea id="msg" name="msg" placeholder="Your message..."></textarea>
+</label>
+<h2>Dropdown</h2>
+<details role="list"><summary>Actions</summary>
+<ul><li><a href="#">Edit</a>
+</li>
+<li><a href="#">Delete</a>
+</li>
+<li><a href="#">Archive</a>
+</li>
+</ul>
+</details>
+<h2>Loading</h2>
+<span aria-busy="true"></span>
+<h2>Nav</h2>
+<nav><ul><li><a href="index.html">Index<li><a href="generated.html">Generated</a>
+</li>
+</a>
+</li>
+</ul>
+</nav>
+<h2>Modal</h2>
+<button onclick="document.getElementById('signup-modal').showModal()">Open Signup Modal</button>
+<dialog id="signup-modal">
+<article><h3>Quick Signup</h3>
+<label for="modal-email">Email<input type="email" id="modal-email" name="modal-email" placeholder="Email">
+</label>
+<label for="modal-pass">Password<input type="password" id="modal-pass" name="modal-pass" placeholder="Password">
+</label>
+<label for="modal-news"><input type="checkbox" id="modal-news" name="modal-news">
+ Subscribe to newsletter</label>
+<button class="secondary" onclick="document.getElementById('signup-modal').close()">Cancel</button>
+<button class="contrast">Register</button>
+<a href="#" data-dismiss="modal">Close</a>
+</article>
+</dialog>
+</div>
+</body>
+</html>
