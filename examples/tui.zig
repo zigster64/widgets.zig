@@ -19,7 +19,7 @@ pub fn tuiPage(io: Io) !void {
         \\<head>
         \\<meta charset="utf-8">
         \\<meta name="viewport" content="width=device-width, initial-scale=1">
-        \\<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tuicss@2.3.2/dist/tuicss.min.css">
+        \\<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tuicss@2.1.2">
         \\<title>TuiCss Demo</title>
         \\</head>
         \\<body style="background:#000;padding:16px;max-width:900px;margin:0 auto">

@@ -22,38 +22,57 @@ pub fn systemPage(io: Io) !void {
         \\<head>
         \\<meta charset="utf-8">
         \\<meta name="viewport" content="width=device-width, initial-scale=1">
-        \\<link rel="stylesheet" href="https://unpkg.com/@sakun/system.css@2.1.1/dist/system.min.css">
+        \\<link rel="stylesheet" href="https://sakofchit.github.io/system.css/system.css">
         \\<title>Macintosh System 6</title>
         \\</head>
         \\<body style="background:#c0c0c0; margin:0; padding:0;">
         \\
     );
 
+    const h = widgets_zig.SystemCSS(w);
+
     // Menu bar
     try w.writeAll(
-        \\<nav class="menu-bar"><ul class="menu-bar-items">
-        \\<li class="apple-menu"><span>🍎</span></li>
-        \\<li>File</li><li>Edit</li><li>View</li><li>Special</li>
-        \\</ul></nav>
+        \\<ul role="menu-bar">
+        \\  <li role="menu-item" tabindex="0" aria-haspopup="true">File
+        \\    <ul role="menu">
+        \\      <li role="menu-item"><a href="/">Home</a></li>
+        \\      <li role="menu-item"><a href="pico.html">PicoCSS</a></li>
+        \\      <li role="menu-item"><a href="daisy.html">DaisyUI</a></li>
+        \\    </ul>
+        \\  </li>
+        \\  <li role="menu-item" tabindex="0" aria-haspopup="true">Demos
+        \\    <ul role="menu">
+        \\      <li role="menu-item"><a href="jelly.html">JellyUI</a></li>
+        \\      <li role="menu-item"><a href="snes.html">SNES.css</a></li>
+        \\      <li role="menu-item"><a href="nes.html">NES.css</a></li>
+        \\      <li role="menu-item"><a href="orbit.html">Orbit</a></li>
+        \\    </ul>
+        \\  </li>
+        \\  <li role="menu-item" tabindex="0" aria-haspopup="true">Retro
+        \\    <ul role="menu">
+        \\      <li role="menu-item"><a href="win98.html">Win98</a></li>
+        \\      <li role="menu-item"><a href="tui.html">TuiCss</a></li>
+        \\    </ul>
+        \\  </li>
+        \\</ul>
         \\
     );
 
-    const h = widgets_zig.SystemCSS(w);
-
     // Desktop icons
     try w.writeAll("<div style=\"display:flex; gap:12px; padding:16px; flex-wrap:wrap\">\n");
-    for ([_][2][]const u8{
-        .{ "🖥️ PicoCSS", "pico.html" },
-        .{ "🖥️ JellyUI", "jelly.html" },
-        .{ "🖥️ DaisyUI", "daisy.html" },
-        .{ "🖥️ NES", "nes.html" },
-        .{ "🖥️ Win98", "win98.html" },
-        .{ "🖥️ Orbit", "orbit.html" },
-        .{ "🖥️ Snes", "snes.html" },
-        .{ "🖥️ TUI", "tui.html" },
-        .{ "🗑️ Trash", "#" },
+    for ([_][3][]const u8{
+        .{ "🖥️", "PicoCSS", "pico.html" },
+        .{ "🖥️", "JellyUI", "jelly.html" },
+        .{ "🖥️", "DaisyUI", "daisy.html" },
+        .{ "🖥️", "NES", "nes.html" },
+        .{ "🖥️", "Win98", "win98.html" },
+        .{ "🖥️", "Orbit", "orbit.html" },
+        .{ "🖥️", "Snes", "snes.html" },
+        .{ "🖥️", "TUI", "tui.html" },
+        .{ "🗑️", "Trash", "#" },
     }) |icon| {
-        try w.print("<a href=\"{s}\" style=\"text-align:center;width:72px;text-decoration:none;color:#000\"><div style=\"font-size:32px\">{s}</div><div style=\"font-size:11px;word-wrap:break-word\">{s}</div></a>\n", .{ icon[1], icon[0], icon[0] });
+        try w.print("<a href=\"{s}\" style=\"text-align:center;width:64px;text-decoration:none;color:#000;display:inline-block\"><div style=\"font-size:24px;line-height:1.2\">{s}</div><div style=\"font-size:9px;line-height:1.1;word-wrap:break-word\">{s}</div></a>\n", .{ icon[2], icon[0], icon[1] });
     }
     try w.writeAll("</div>\n");
 
